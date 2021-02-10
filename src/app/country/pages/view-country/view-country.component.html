@@ -1,0 +1,48 @@
+<div *ngIf="!country; else showCountry" class="alert alert-info">
+    Please wait...
+</div>
+
+<ng-template #showCountry>
+    <div class="row">
+        <div class="col-12">
+            <h1>Country: {{country.name}}</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-4">
+            <h3>Flag</h3>
+            <img [src]="country.flag" alt="Country Flag" class="img-thumbnail">
+        </div>
+        <div class="col">
+            <h3>Information</h3>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <strong>population: </strong>{{country.population | number}}
+                </li>
+                <li class="list-group-item">
+                    <strong>Numeric Code: </strong>{{country.numericCode}}
+                </li>
+                <li class="list-group-item">
+                    <strong>Alpha Code: </strong>{{country.alpha2Code}}
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <h3>Translation</h3>
+    <div class="row">
+        <div class="col">
+            <span class="badge badge-primary mr-1">{{country.translations.es}}</span>
+            <span class="badge badge-primary mr-1">{{country.translations.ja}}</span>
+            <span class="badge badge-primary mr-1">{{country.translations.fr}}</span>
+            <span class="badge badge-primary mr-1">{{country.translations.br}}</span>
+            <span class="badge badge-primary mr-1">{{country.translations.de}}</span>
+            <span class="badge badge-primary mr-1">{{country.translations.fa}}</span>
+            <span class="badge badge-primary mr-1">{{country.translations.hr}}</span>
+            <span class="badge badge-primary mr-1">{{country.translations.it}}</span>
+            <span class="badge badge-primary mr-1">{{country.translations.nl}}</span>
+            <span class="badge badge-primary mr-1">{{country.translations.pt}}</span>
+        </div>
+    </div>
+</ng-template>
