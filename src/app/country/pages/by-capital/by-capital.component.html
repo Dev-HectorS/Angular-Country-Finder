@@ -1,0 +1,21 @@
+<div class="animate__animated animate__fadeIn animate__faster">
+    <h3>By Capital</h3>
+    <hr>
+
+    <div class="row">
+        <div class="col">
+            <app-country-input (onEnter)="search($event)" placeholder="Search capital..."></app-country-input>
+        </div>
+    </div>
+    <hr>
+</div>
+
+<div *ngIf="found" class="alert alert-danger">
+    Country <strong>{{searchText}}</strong> has not been found.
+</div>
+
+<div *ngIf="countries.length > 0" class="row">
+    <div class="col">
+        <app-country-table [countries]="countries"></app-country-table>
+    </div>
+</div>
